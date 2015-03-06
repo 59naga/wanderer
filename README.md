@@ -1,6 +1,6 @@
 # ![wanderer][.svg] Wanderer [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
-> Shorthund file seeker. inspired [gulp.src][1]
+> Shorthand file seeker. inspired [gulp.src][1]
 
 ## Installation
 ```bash
