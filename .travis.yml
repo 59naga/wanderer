@@ -8,10 +8,10 @@ after_success:
 
 env:
   global:
-    secure: UOuMAFj+9lSvgm/Rf9pxA9FcHtdbxvEqH5I7khgPyVah/t9WjVFluzmZYajXKGLLeeYWAx1gH+H+J3dLYdqnEVOUkR/a0oXpPBGExbHQ5TeahvTCEh7d2pK5ZxoRiqJUHcRDWa5jcQ8X+ZA6fYUt2tppD4/STUtuFzi0+4u/YFM=
+    secure: vHab6EewdaQ5tuP30VAptt2QLSj54pxDqi/lSE14yS5a6ZPX6WXuOvx2ONU4NQyNKeUqdPLgZ8ZAEKa9DRbebE1eZWUdNpfa2x+pilhVRa3dB76kFL40iGBsbLw4YWm+a8VUAYDM6+jkR4mN1k6OAXnSoknBILtBhskr2aNgAN4=
 
 deploy:
   provider: npm
   email: i59naga@icloud.com
   api_key:
-    secure: M8OG5J3DtvhYpd/hh3yd4Y77u5NoEWM4x5kvRbMXUSHAIoUFEXq9a5k7lGmkftCBNFjUgiMLkCT7z+/o5kn/UXnJR1dDXnUO9MzFksS7J62ChbxJ7E9BsRfJCpH554779zEvAIN39EM2rrowesAXFMJP2qNAzKh1c8PiVtIPrkk=
+    secure: PzEeKM9pgZborGXH7qeIOoc3XDSSrZyPLxbDSyYi5qRvPWenQFjOQjxiVMU3owwvtO/82Kq1kqO6Kje0lEdhWVniVU42sD+lJuPvT9fVMHhauGCqaeRNAPHnQpuHge8ZgMKeOYlH6/LQPvZraaCmDTpkQwL+6+Hdd8lEgKwqUsQ=
