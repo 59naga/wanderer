@@ -8,28 +8,22 @@ npm install wanderer --save
 ```
 
 ## Usage
-Can use [glob][2].
-
-example:
 ```js
-var Wanderer= require('wanderer');
-var files= Wanderer.seekSync('*.md');
+var wanderer= require('wanderer');
+var files= wanderer.seekSync('*.md');
 console.log(files); // [ 'CHANGELOG.md', 'LICENSE.md', 'README.md' ]
 ```
 
 or wanderer.seek:
 ```js
 var Wanderer= require('wanderer');
-var wanderer= Wanderer.seek('*.md','!LICENSE');
-wanderer.on('data',function(file){
-  console.log(file); // found file
-});
+var wanderer= Wanderer.seek('*.md');
 wanderer.on('end',function(files){
-  console.log(files); // found files (sorted)
+  console.log(files); // [ 'CHANGELOG.md', 'LICENSE.md', 'README.md' ]
 });
 ```
 
-And, Can use nagative glob:
+Can use [glob][2]. and, Can use nagative glob:
 
 ```js
 var files= Wanderer.seekSync('*.md','!CHANGELOG.md');
