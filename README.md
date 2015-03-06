@@ -8,7 +8,7 @@ npm install wanderer --save
 ```
 
 ## Usage
-Can use [glob][2] pattern, and nagative pattern.
+Can use [glob][2].
 
 example:
 ```js
@@ -29,7 +29,7 @@ wanderer.on('end',function(files){
 });
 ```
 
-Can use nagative glob:
+And, Can use nagative glob:
 
 ```js
 var files= Wanderer.seekSync('*.md','!CHANGELOG.md');
