@@ -3,7 +3,7 @@
   "bin" : "wanderer",
   "main": "wanderer.cup.js",
   "description": "Shorthund file seeker",
-  "version": "0.0.0",
+  "version": "0.0.1",
 
   "scripts": {
     "test": "jasminetea . --verbose --cover",
@@ -11,12 +11,12 @@
   },
 
   "dependencies": {
+    "coffee-script": "^1.8.0",
     "glob": "^4.3.5",
     "minimatch": "^2.0.1",
     "optimist": "^0.6.1"
   },
   "devDependencies": {
-    "coffee-script": "^1.8.0",
     "jasminetea": "^0.1.9",
     "coveralls": "^2.11.2"
   },
