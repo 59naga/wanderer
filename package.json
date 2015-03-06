@@ -1,0 +1,39 @@
+{
+  "name": "wanderer",
+  "bin" : "wanderer",
+  "main": "wanderer.cup.js",
+  "description": "Shorthund file seeker",
+  "version": "0.0.0",
+
+  "scripts": {
+    "test": "jasminetea . --verbose --cover",
+    "coveralls": "coveralls < ./coverage/lcov.info && rm -rf coverage"
+  },
+
+  "dependencies": {
+    "glob": "^4.3.5",
+    "minimatch": "^2.0.1",
+    "optimist": "^0.6.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "jasminetea": "^0.1.9",
+    "coveralls": "^2.11.2"
+  },
+  
+  "keywords": [
+    "glob",
+    "browserify",
+    "gulpfriendly"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/59naga/wanderer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59naga/wanderer/issues"
+  },
+  "homepage": "https://github.com/59naga/wanderer",
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me/)",
+  "license": "MIT"
+}

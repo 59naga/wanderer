@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - '0.10'
+script:
+  - 'npm test'
+after_success:
+  - 'npm run coveralls'
+
+env:
+  global:
+    secure: UOuMAFj+9lSvgm/Rf9pxA9FcHtdbxvEqH5I7khgPyVah/t9WjVFluzmZYajXKGLLeeYWAx1gH+H+J3dLYdqnEVOUkR/a0oXpPBGExbHQ5TeahvTCEh7d2pK5ZxoRiqJUHcRDWa5jcQ8X+ZA6fYUt2tppD4/STUtuFzi0+4u/YFM=
+
+deploy:
+  provider: npm
+  email: i59naga@icloud.com
+  api_key:
+    secure: M8OG5J3DtvhYpd/hh3yd4Y77u5NoEWM4x5kvRbMXUSHAIoUFEXq9a5k7lGmkftCBNFjUgiMLkCT7z+/o5kn/UXnJR1dDXnUO9MzFksS7J62ChbxJ7E9BsRfJCpH554779zEvAIN39EM2rrowesAXFMJP2qNAzKh1c8PiVtIPrkk=
