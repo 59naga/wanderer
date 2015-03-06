@@ -17,7 +17,7 @@ wanderer=
     eventEmitter= new (require('events').EventEmitter)
 
     # TODO: without glob.sync version
-    files= @seekSync arguments...
+    files= wanderer.seekSync arguments...
     process.nextTick ->
       eventEmitter.emit 'data',file for file in files
       eventEmitter.emit 'end',files

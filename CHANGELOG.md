@@ -1,4 +1,4 @@
-v0.0.1 / Mar 06 2015
+v0.0.2 / Mar 06 2015
 =========================
  * [`unknown`][unknown] Rewrite & Rename
 

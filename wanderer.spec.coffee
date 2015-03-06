@@ -10,25 +10,31 @@ describe 'wanderer',->
 
     it '`!` ignore prefix',()->
       files= wanderer.seekSync ['*.md','!LICENSE.md']
-      expect(JSON.stringify files).toEqual('["CHANGELOG.md","README.md"]')
+      expect(files).toEqual ["CHANGELOG.md","README.md"]
 
     it '(ignore duplicate)',()->
       files= wanderer.seekSync '*.md','README.md'
-      expect(JSON.stringify files).toEqual('["CHANGELOG.md","LICENSE.md","README.md"]')
+      expect(files).toEqual ["CHANGELOG.md","LICENSE.md","README.md"]
 
   describe '.seek',()->
     it '*.md',(done)->
       globs= '*.md'
-      options= {}
 
-      files= []
-      seeker= wanderer.seek globs,options
-      seeker.on 'data',(file)->
-        files.push file
-      seeker.on 'end',->
+      seeker= wanderer.seek '*.md'
+      seeker.on 'end',(files)->
         
         expect(files).toEqual ["CHANGELOG.md","LICENSE.md","README.md"]
         done()
+
+    it '`!` ignore prefix',()->
+      seeker= wanderer.seek ['*.md','!LICENSE.md']
+      seeker.on 'end',(files)->
+        expect(files).toEqual ["CHANGELOG.md","README.md"]
+
+    it '(ignore duplicate)',()->
+      seeker= wanderer.seek '*.md','README.md'
+      seeker.on 'end',(files)->
+        expect(files).toEqual ["CHANGELOG.md","LICENSE.md","README.md"]
 
   describe '.normalize',()->
     it 'simple',->
