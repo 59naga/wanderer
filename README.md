@@ -16,9 +16,8 @@ console.log(files); // [ 'CHANGELOG.md', 'LICENSE.md', 'README.md' ]
 
 or wanderer.seek:
 ```js
-var Wanderer= require('wanderer');
-var wanderer= Wanderer.seek('*.md');
-wanderer.on('end',function(files){
+var wanderer= require('wanderer');
+wanderer.seek('*.md').on('end',function(files){
   console.log(files); // [ 'CHANGELOG.md', 'LICENSE.md', 'README.md' ]
 });
 ```
