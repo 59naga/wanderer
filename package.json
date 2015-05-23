@@ -1,30 +1,51 @@
 {
   "name": "wanderer",
-  "bin" : "wanderer",
-  "main": "wanderer.cup.js",
-  "description": "Shorthund file seeker",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
+  "description": "Glob.sync positive/negative function",
 
+  "bin" : "wanderer",
+  "files": [
+    "wanderer",
+    "index.js",
+    "lib"
+  ],
+
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run cover"
+    }
+  },
   "scripts": {
-    "test": "jasminetea . --verbose --cover",
-    "coveralls": "coveralls < ./coverage/lcov.info && rm -rf coverage"
+    "default": "jasminetea test --verbose --timeout 1000",
+    "cover": "$(opc package scripts.default) --cover --report",
+
+    "Developer commands": "",
+      "start": "$(opc package scripts.default) --watch",
+
+    "Travis-CI commands": "",
+      "test": "npm run cover",
+
+    "Npm update via Travis-CI": "",
+      "prepublish": "if [ $TRAVIS_BUILD_PASSED ]; then npm run compile; fi",
+      
+      "compile": "coffee --bare --compile index.coffee",
+      "postcompile": "coffee --output lib --bare --compile src"
   },
 
   "dependencies": {
-    "coffee-script": "^1.8.0",
     "glob": "^4.3.5",
     "minimatch": "^2.0.1",
     "optimist": "^0.6.1"
   },
   "devDependencies": {
-    "jasminetea": "^0.1.9",
-    "coveralls": "^2.11.2"
+    "coffee-script": "^1.9.2",
+    "ghooks": "^0.3.2",
+    "jasminetea": "^0.1.30-rc.3",
+    "object-parser-cli": "0.0.0-alpha.0"
   },
   
   "keywords": [
-    "glob",
-    "browserify",
-    "gulpfriendly"
+    "glob"
   ],
   "repository": {
     "type": "git",

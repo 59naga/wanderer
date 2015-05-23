@@ -1,8 +1,17 @@
+# Dependencies
+optimist= require 'optimist'
+
+glob= require 'glob'
+minimatch= require 'minimatch'
+
+EventEmitter= require('events').EventEmitter
+
 wanderer=
   cli: ->
-    argv= require('optimist').argv
+    argv= optimist.argv
 
     console.log wanderer.seekSync(argv._).join '\n'
+    
     process.exit 0
 
   seekSync: ->
@@ -14,20 +23,17 @@ wanderer=
     files
 
   seek: ->
-    eventEmitter= new (require('events').EventEmitter)
-
     # TODO: without glob.sync version
     files= wanderer.seekSync arguments...
-    process.nextTick ->
-      eventEmitter.emit 'data',file for file in files
-      eventEmitter.emit 'end',files
 
-    eventEmitter
+    seeker= new EventEmitter
+    process.nextTick ->
+      seeker.emit 'data',file for file in files
+      seeker.emit 'end',files
+
+    seeker
 
   bring: (globs,options={})->
-    glob= require 'glob'
-    minimatch= require 'minimatch'
-
     positives= globs.filter (pattern)-> pattern[0] isnt '!'
     negatives= globs.filter (pattern)-> pattern[0] is '!'
 

@@ -1,6 +1,6 @@
 # ![wanderer][.svg] Wanderer [![NPM version][npm-image]][npm] [![Build Status][travis-image]][travis] [![Coverage Status][coveralls-image]][coveralls]
 
-> Shorthand file seeker. inspired [gulp.src][1]
+> Glob.sync positive/negative function. inspired [gulp.src][1]
 
 ## Installation
 ```bash
@@ -59,7 +59,9 @@ wanderer '**/*.json' '!**/bower.json' '!**/package.json'
 
 License
 =========================
-MIT by 59naga
+[MIT][License]
+
+[License]: http://59naga.mit-license.org/
 
 [.svg]: https://cdn.rawgit.com/59naga/wanderer/master/.svg
 

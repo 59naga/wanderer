@@ -1,16 +1,23 @@
+# Quick boot options
+sudo: false
+cache:
+  directories:
+    - node_modules
+
+# Language options
 language: node_js
 node_js:
-- '0.10'
-script:
-- npm test
-after_success:
-- npm run coveralls
+  - '0.10'
 
-
+# COVERALLS_REPO_TOKEN
 env:
   global:
     secure: vHab6EewdaQ5tuP30VAptt2QLSj54pxDqi/lSE14yS5a6ZPX6WXuOvx2ONU4NQyNKeUqdPLgZ8ZAEKa9DRbebE1eZWUdNpfa2x+pilhVRa3dB76kFL40iGBsbLw4YWm+a8VUAYDM6+jkR4mN1k6OAXnSoknBILtBhskr2aNgAN4=
 
+# Npm publish options
+before_deploy:
+  - npm install coffee-script --global
+  - export TRAVIS_BUILD_PASSED=true
 deploy:
   provider: npm
   email: i59naga@icloud.com
